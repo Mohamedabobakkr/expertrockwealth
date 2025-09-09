@@ -1,6 +1,5 @@
 import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
-import type { SanityImageSource } from '@sanity/image-url/lib/types';
 
 if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
   throw new Error('Missing NEXT_PUBLIC_SANITY_PROJECT_ID');
@@ -27,7 +26,7 @@ export const previewClient = createClient({
 
 const builder = imageUrlBuilder(client);
 
-export function urlFor(source: SanityImageSource) {
+export function urlFor(source: any) {
   return builder.image(source);
 }
 
@@ -103,7 +102,7 @@ export interface Service {
   slug: { current: string };
   summary: string;
   icon?: string;
-  heroImage?: SanityImageSource;
+  heroImage?: any;
   longDescription: any[];
   benefits: Array<{
     title: string;
@@ -126,7 +125,7 @@ export interface Service {
   seo?: {
     metaTitle?: string;
     metaDescription?: string;
-    ogImage?: SanityImageSource;
+    ogImage?: any;
   };
   featured: boolean;
   order: number;
@@ -137,7 +136,7 @@ export interface CaseStudy {
   title: string;
   slug: { current: string };
   excerpt: string;
-  heroImage: SanityImageSource;
+  heroImage: any;
   industry: string;
   services: Service[];
   metrics: Array<{
@@ -153,13 +152,13 @@ export interface CaseStudy {
     quote: string;
     authorName: string;
     authorRole: string;
-    authorImage?: SanityImageSource;
+    authorImage?: any;
   };
-  gallery: SanityImageSource[];
+  gallery: any[];
   seo?: {
     metaTitle?: string;
     metaDescription?: string;
-    ogImage?: SanityImageSource;
+    ogImage?: any;
   };
   featured: boolean;
   publishedAt: string;
@@ -171,7 +170,7 @@ export interface Post {
   title: string;
   slug: { current: string };
   excerpt: string;
-  heroImage: SanityImageSource;
+  heroImage: any;
   category: string;
   tags: string[];
   body: any[];
@@ -181,7 +180,7 @@ export interface Post {
   seo?: {
     metaTitle?: string;
     metaDescription?: string;
-    ogImage?: SanityImageSource;
+    ogImage?: any;
   };
   featured: boolean;
 }
@@ -192,8 +191,8 @@ export interface Testimonial {
   authorName: string;
   authorRole: string;
   authorCompany?: string;
-  authorAvatar?: SanityImageSource;
-  companyLogo?: SanityImageSource;
+  authorAvatar?: any;
+  companyLogo?: any;
   rating: number;
   featured: boolean;
   services: Service[];
@@ -206,7 +205,7 @@ export interface TeamMember {
   slug?: { current: string };
   role: string;
   department?: string;
-  photo: SanityImageSource;
+  photo: any;
   bio?: any[];
   expertise?: string[];
   languages?: string[];
