@@ -2,7 +2,6 @@
 
 A production-ready marketing and lead generation portal for UAE business formation services, built with Next.js 14, TypeScript, and modern web technologies.
 
-![Expert Rock Wealth](public/og-image.jpg)
 
 ## 🌟 Overview
 
