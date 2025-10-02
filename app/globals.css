@@ -2,44 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --background: 210 20% 6%;
-  --foreground: 0 0% 100%;
+  /* Refined Old Money Aesthetic - Warm, Light, Sophisticated */
+  --background: 42 38% 97%; /* #FAF7F2 - Warm cream white */
+  --foreground: 28 25% 22%; /* #372E28 - Rich warm brown */
 
-  --card: 210 20% 8%;
-  --card-foreground: 0 0% 100%;
+  --card: 40 30% 95%; /* #F5F2ED - Soft cream */
+  --card-foreground: 28 25% 22%; /* #372E28 */
 
-  --popover: 210 20% 8%;
-  --popover-foreground: 0 0% 100%;
+  --popover: 40 30% 95%; /* #F5F2ED */
+  --popover-foreground: 28 25% 22%; /* #372E28 */
 
-  --primary: 180 100% 15%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary: Warm sophisticated brown */
+  --primary: 30 28% 28%; /* #4D4035 - Elegant walnut */
+  --primary-foreground: 42 38% 97%; /* #FAF7F2 */
 
-  --secondary: 210 20% 12%;
-  --secondary-foreground: 0 0% 100%;
+  /* Secondary: Warm stone */
+  --secondary: 35 18% 68%; /* #BAAD9E - Warm stone */
+  --secondary-foreground: 28 25% 22%; /* #372E28 */
 
-  --muted: 210 20% 10%;
-  --muted-foreground: 215 20.2% 65.1%;
+  /* Muted: Warm neutral tones */
+  --muted: 40 30% 95%; /* #F5F2ED */
+  --muted-foreground: 30 18% 48%; /* #6E6156 */
 
-  --accent: 39 20% 67%;
-  --accent-foreground: 210 20% 6%;
+  /* Accent: Warm burnished gold */
+  --accent: 40 70% 58%; /* #D4A961 - Warm gold */
+  --accent-foreground: 28 25% 22%;
 
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 100%;
+  --destructive: 0 65% 50%;
+  --destructive-foreground: 42 38% 97%;
 
-  --border: 210 20% 15%;
-  --input: 210 20% 15%;
-  --ring: 180 100% 15%;
+  /* Refined borders and inputs */
+  --border: 38 20% 90%; /* #EBE5DD */
+  --input: 38 20% 90%;
+  --ring: 40 70% 58%;
 
-  --surface: 210 20% 10%;
+  /* Surface variations */
+  --surface: 41 32% 96%; /* #F7F3EE */
+  --surface-elevated: 40 28% 93%; /* #F0EBE4 */
 
-  --radius: 0.75rem;
+  /* Old Money palette variables - warm tones */
+  --wealth-1: 42 38% 97%; /* #FAF7F2 - Warm cream white */
+  --wealth-2: 40 30% 95%;  /* #F5F2ED - Soft cream */
+  --wealth-3: 35 18% 68%;  /* #BAAD9E - Warm stone */
+  --wealth-4: 30 28% 28%;  /* #4D4035 - Elegant walnut */
+  --wealth-5: 28 25% 22%;  /* #372E28 - Rich warm brown */
 
-  --font-geist-sans: 'Inter', system-ui, sans-serif;
-  --font-playfair: 'Playfair Display', serif;
-  --font-geist-mono: ui-monospace, SFMono-Regular, monospace;
+  /* Heritage accent colors - warm refined palette */
+  --heritage-gold: 40 70% 58%; /* #D4A961 - Warm gold */
+  --heritage-bronze: 30 45% 48%; /* #9B7F5C - Warm bronze */
+  --heritage-sage: 145 18% 52%; /* #71917A - Warm sage */
+
+  --radius: 0.5rem;
+
+  /* Luxury typography system */
+  --font-garamond: 'Cormorant Garamond', serif;
+  --font-eb-garamond: 'EB Garamond', serif;
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
 }
 
 * {
@@ -82,7 +104,7 @@ html {
 .prose h5,
 .prose h6 {
   color: hsl(var(--foreground));
-  font-family: var(--font-playfair);
+  font-family: var(--font-garamond);
 }
 
 .prose a {
@@ -138,9 +160,10 @@ html {
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
 }
 
 .scroll-smooth {
@@ -163,15 +186,23 @@ html {
   transform: rotateY(180deg);
 }
 
-/* Pinterest-inspired aesthetics */
+/* Refined wealth-focused card system with timeless elegance */
 .pinterest-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: linear-gradient(
+    145deg,
+    hsla(var(--wealth-1), 0.95) 0%,
+    hsla(var(--wealth-2), 1) 100%
+  );
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid hsla(var(--wealth-3), 0.2);
+  border-radius: var(--radius);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   overflow: hidden;
   position: relative;
+  box-shadow:
+    0 2px 16px hsla(var(--wealth-4), 0.08),
+    0 4px 32px hsla(var(--wealth-4), 0.04),
+    inset 0 1px 0 hsla(255, 255, 255, 0.5);
 }
 
 .pinterest-card::before {
@@ -181,33 +212,77 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--heritage-gold), 0.03) 0%,
+    hsla(var(--heritage-bronze), 0.02) 50%,
+    hsla(var(--heritage-sage), 0.02) 100%
+  );
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   pointer-events: none;
 }
 
+.pinterest-card::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--heritage-gold), 0.15),
+    hsla(var(--heritage-bronze), 0.12),
+    hsla(var(--heritage-sage), 0.1)
+  );
+  border-radius: calc(var(--radius) + 1px);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 .pinterest-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.15),
-    0 10px 20px rgba(0, 77, 64, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border-color: rgba(210, 180, 140, 0.3);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 8px 32px hsla(var(--wealth-4), 0.12),
+    0 16px 64px hsla(var(--wealth-4), 0.08),
+    inset 0 1px 0 hsla(255, 255, 255, 0.8),
+    0 0 0 1px hsla(var(--heritage-gold), 0.15);
+  border-color: hsla(var(--heritage-gold), 0.3);
 }
 
 .pinterest-card:hover::before {
   opacity: 1;
 }
 
+.pinterest-card:hover::after {
+  opacity: 1;
+}
+
 .pinterest-hero {
-  background: 
-    radial-gradient(ellipse at top left, rgba(0, 77, 64, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at top right, rgba(210, 180, 140, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom, rgba(0, 77, 64, 0.05) 0%, transparent 70%),
+  background:
+    radial-gradient(ellipse 1200px 800px at top left, hsla(var(--heritage-gold), 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 800px 1000px at top right, hsla(var(--heritage-bronze), 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 1400px 600px at bottom center, hsla(var(--heritage-sage), 0.02) 0%, transparent 70%),
     linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--surface)) 100%);
   position: relative;
   overflow: hidden;
+}
+
+.pinterest-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(135deg, hsla(var(--wealth-1), 0.6) 0%, transparent 40%),
+    linear-gradient(225deg, hsla(var(--wealth-2), 0.5) 0%, transparent 40%),
+    linear-gradient(45deg, hsla(var(--wealth-3), 0.3) 0%, transparent 50%);
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .pinterest-hero::after {
@@ -217,18 +292,20 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23004D40' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.6;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='wealthGrad' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' style='stop-color:%234A3F35;stop-opacity:0.015' /%3E%3Cstop offset='100%25' style='stop-color:%23B5ADA3;stop-opacity:0.008' /%3E%3C/radialGradient%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='url(%23wealthGrad)'%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+  animation: gentleFloat 30s ease-in-out infinite;
 }
 
 .elegant-button {
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 100%);
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--wealth-4)) 100%);
   border: 0;
-  border-radius: 12px;
-  box-shadow: 
-    0 8px 16px rgba(0, 77, 64, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius);
+  box-shadow:
+    0 2px 12px hsla(var(--wealth-4), 0.15),
+    0 4px 24px hsla(var(--wealth-4), 0.08),
+    inset 0 1px 0 hsla(var(--wealth-1), 0.2);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   overflow: hidden;
 }
@@ -240,23 +317,52 @@ html {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsla(var(--heritage-gold), 0.25),
+    transparent
+  );
+  transition: left 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.elegant-button::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--heritage-gold), 0.3),
+    hsla(var(--heritage-bronze), 0.25),
+    hsla(var(--heritage-sage), 0.2)
+  );
+  border-radius: calc(var(--radius) + 1px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .elegant-button:hover::before {
   left: 100%;
 }
 
+.elegant-button:hover::after {
+  opacity: 1;
+}
+
 .elegant-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 12px 24px rgba(0, 77, 64, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow:
+    0 6px 20px hsla(var(--wealth-4), 0.2),
+    0 12px 40px hsla(var(--wealth-4), 0.12),
+    inset 0 1px 0 hsla(var(--wealth-1), 0.3);
 }
 
 .elegant-text {
-  background: linear-gradient(135deg, hsl(var(--foreground)) 0%, rgba(210, 180, 140, 0.9) 100%);
+  background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -297,26 +403,31 @@ html {
 .floating-orb {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0, 77, 64, 0.1), rgba(210, 180, 140, 0.1));
-  filter: blur(40px);
-  animation: floatingOrb 8s ease-in-out infinite;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--heritage-gold), 0.08),
+    hsla(var(--heritage-bronze), 0.06),
+    hsla(var(--heritage-sage), 0.05)
+  );
+  filter: blur(80px);
+  animation: refinedFloat 15s ease-in-out infinite;
   pointer-events: none;
 }
 
 .floating-orb:nth-child(1) {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   top: -150px;
   right: -150px;
   animation-delay: 0s;
 }
 
 .floating-orb:nth-child(2) {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   bottom: -100px;
   left: -100px;
-  animation-delay: 4s;
+  animation-delay: 5s;
 }
 
 @keyframes floatingOrb {
@@ -326,17 +437,18 @@ html {
 }
 
 .elegant-input {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .elegant-input:focus {
-  border-color: rgba(0, 77, 64, 0.5);
-  box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.1);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(30, 130, 195, 0.3);
+  box-shadow: 0 0 0 3px rgba(30, 130, 195, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 1);
 }
 
 .elegant-badge {
@@ -373,20 +485,149 @@ html {
 }
 
 .elegant-icon-wrapper {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(0, 77, 64, 0.1), rgba(210, 180, 140, 0.1));
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--wealth-1), 0.95) 0%,
+    hsla(var(--wealth-2), 0.9) 100%
+  );
+  box-shadow:
+    0 2px 12px hsla(var(--wealth-4), 0.06),
+    0 4px 24px hsla(var(--wealth-4), 0.03),
+    inset 0 1px 0 hsla(255, 255, 255, 0.4);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.elegant-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    hsla(var(--heritage-gold), 0.12),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0;
 }
 
 .pinterest-card:hover .elegant-icon-wrapper {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, rgba(0, 77, 64, 0.2), rgba(210, 180, 140, 0.2));
+  transform: scale(1.1) translateY(-2px);
+  box-shadow:
+    0 6px 20px hsla(var(--wealth-4), 0.1),
+    0 12px 40px hsla(var(--wealth-4), 0.06),
+    inset 0 1px 0 hsla(255, 255, 255, 0.6);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--wealth-2), 0.95) 0%,
+    hsla(var(--wealth-1), 0.9) 100%
+  );
+}
+
+.pinterest-card:hover .elegant-icon-wrapper::before {
+  opacity: 1;
+  transform: rotate(45deg) translateX(100%);
+}
+
+/* Refined Glass Effects - Old Money Elegance */
+.ultra-glass {
+  background: hsla(var(--wealth-1), 0.85);
+  backdrop-filter: blur(32px);
+  border: 1px solid hsla(var(--wealth-3), 0.15);
+  box-shadow:
+    0 4px 24px hsla(var(--wealth-4), 0.06),
+    0 8px 48px hsla(var(--wealth-4), 0.03),
+    inset 0 1px 0 hsla(255, 255, 255, 0.4);
+}
+
+.magnetic-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.magnetic-hover:hover {
+  transform: perspective(1000px) rotateX(5deg) translateY(-10px);
+}
+
+/* Floating Elements */
+.floating-element {
+  animation: elegantFloat 6s ease-in-out infinite;
+}
+
+@keyframes elegantFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+/* Refined Scroll Indicator - Timeless Elegance */
+.scroll-indicator {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--wealth-1), 0.95) 0%,
+    hsla(var(--wealth-2), 0.9) 100%
+  );
+  backdrop-filter: blur(24px);
+  border: 1px solid hsla(var(--wealth-3), 0.2);
+  box-shadow:
+    0 4px 16px hsla(var(--wealth-4), 0.08),
+    0 8px 32px hsla(var(--wealth-4), 0.04),
+    inset 0 1px 0 hsla(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-indicator::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--heritage-gold), 0.25),
+    hsla(var(--heritage-bronze), 0.2),
+    hsla(var(--heritage-sage), 0.2)
+  );
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow:
+    0 8px 24px hsla(var(--wealth-4), 0.12),
+    0 16px 48px hsla(var(--wealth-4), 0.06),
+    inset 0 1px 0 hsla(255, 255, 255, 0.6);
+}
+
+.scroll-indicator:hover::before {
+  opacity: 1;
 }
 
 .elegant-divider {
@@ -419,5 +660,172 @@ html {
 
 .pinterest-cta:hover::before {
   opacity: 1;
+}
+
+/* Timeless Wealth Typography System - Old Money Aesthetic */
+.heading-xl {
+  font-family: var(--font-garamond);
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.015);
+}
+
+.heading-lg {
+  font-family: var(--font-garamond);
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.015);
+}
+
+.heading-md {
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+
+.heading-sm {
+  font-family: var(--font-sans);
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.body-lg {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: hsl(var(--muted-foreground));
+}
+
+.body-md {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+}
+
+.body-sm {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: hsl(var(--muted-foreground));
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  color: hsl(var(--wealth-4));
+}
+
+.luxury-display {
+  font-family: var(--font-garamond);
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--wealth-5)) 0%,
+    hsl(var(--wealth-4)) 50%,
+    hsl(var(--wealth-3)) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: wealthTextFlow 12s ease-in-out infinite;
+}
+
+.elegant-subtext {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: hsl(var(--wealth-4));
+  max-width: 65ch;
+}
+
+.ultra-premium-text {
+  font-family: var(--font-garamond);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--heritage-gold)) 0%,
+    hsl(var(--heritage-bronze)) 50%,
+    hsl(var(--heritage-sage)) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: heritageGradientFlow 10s ease-in-out infinite;
+}
+
+@keyframes wealthTextFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes heritageGradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  33% { background-position: 100% 40%; }
+  66% { background-position: 50% 70%; }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes refinedFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) translateX(3px) scale(1.02);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-2px) scale(1);
+  }
+  75% {
+    transform: translateY(-10px) translateX(2px) scale(1.01);
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-xl {
+    font-size: 3rem;
+  }
+
+  .heading-lg {
+    font-size: 2.25rem;
+  }
+
+  .luxury-display {
+    font-size: 3.5rem;
+  }
+
+  .elegant-subtext {
+    font-size: 1.25rem;
+  }
 }
 

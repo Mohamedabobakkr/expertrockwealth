@@ -6,56 +6,74 @@ import { Button } from '@/components/ui/button';
 
 export function CalculatorTeaser() {
   return (
-    <section className="py-24 bg-surface">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold mb-4 gradient-text">
+    <section className="relative overflow-hidden bg-surface py-16 md:py-20 lg:py-24">
+      {/* Subtle Background Image */}
+      <div className="absolute inset-0 z-0 opacity-[0.04]">
+        <img
+          src="https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=2187&auto=format&fit=crop"
+          alt=""
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-12 text-center">
+            <h2 className="gradient-text mb-4 font-serif text-4xl font-bold">
               Calculate Your Setup Costs
             </h2>
             <p className="text-xl text-muted-foreground">
               Get an instant estimate for your UAE business formation
             </p>
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="bg-background border border-border rounded-lg p-8 text-center"
+            className="rounded-lg border border-border bg-background p-6 text-center md:p-8"
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
-              <Calculator className="w-10 h-10 text-primary" />
+            <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+              <Calculator className="h-10 w-10 text-primary" />
             </div>
-            
-            <h3 className="text-2xl font-semibold mb-4">Interactive Cost Calculator</h3>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Our smart calculator considers your specific requirements including jurisdiction, 
-              company type, visa needs, banking requirements, and additional services to provide 
-              accurate cost estimates.
+
+            <h3 className="mb-4 text-2xl font-semibold">
+              Interactive Cost Calculator
+            </h3>
+            <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
+              Our smart calculator considers your specific requirements
+              including jurisdiction, company type, visa needs, banking
+              requirements, and additional services to provide accurate cost
+              estimates.
             </p>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 text-sm">
-              <div className="p-4 bg-surface rounded-lg">
-                <div className="text-primary font-semibold">From AED 15,000</div>
-                <div className="text-muted-foreground">Basic Setup</div>
+
+            <div className="mb-8 grid grid-cols-2 gap-4 text-sm md:grid-cols-4">
+              <div className="rounded-lg bg-surface p-4">
+                <div className="font-semibold text-primary">Freezone</div>
+                <div className="text-muted-foreground">Fast Setup</div>
               </div>
-              <div className="p-4 bg-surface rounded-lg">
-                <div className="text-primary font-semibold">From AED 35,000</div>
-                <div className="text-muted-foreground">Standard Package</div>
+              <div className="rounded-lg bg-surface p-4">
+                <div className="font-semibold text-primary">Mainland</div>
+                <div className="text-muted-foreground">Full Access</div>
               </div>
-              <div className="p-4 bg-surface rounded-lg">
-                <div className="text-primary font-semibold">From AED 75,000</div>
-                <div className="text-muted-foreground">Premium Setup</div>
+              <div className="rounded-lg bg-surface p-4">
+                <div className="font-semibold text-primary">Offshore</div>
+                <div className="text-muted-foreground">Asset Protection</div>
               </div>
-              <div className="p-4 bg-surface rounded-lg">
-                <div className="text-primary font-semibold">Custom Quote</div>
-                <div className="text-muted-foreground">Enterprise</div>
+              <div className="rounded-lg bg-surface p-4">
+                <div className="font-semibold text-primary">Custom</div>
+                <div className="text-muted-foreground">Tailored Solutions</div>
               </div>
             </div>
-            
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Try Calculator
-              <ArrowRight className="ml-2 w-4 h-4" />
+
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90"
+              asChild
+            >
+              <a href="/calculator">
+                Try Calculator
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </motion.div>
         </div>

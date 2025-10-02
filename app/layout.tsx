@@ -1,10 +1,24 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Cormorant_Garamond, EB_Garamond, Montserrat } from 'next/font/google';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-geist-sans' });
+const garamond = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-garamond',
+  weight: ['300', '400', '500', '600', '700'],
+});
+const ebGaramond = EB_Garamond({
+  subsets: ['latin'],
+  variable: '--font-eb-garamond',
+  weight: ['400', '500', '600', '700'],
+});
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['300', '400', '500', '600', '700'],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +36,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.variable}>
+      <body
+        className={`${garamond.variable} ${ebGaramond.variable} ${montserrat.variable}`}
+      >
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>

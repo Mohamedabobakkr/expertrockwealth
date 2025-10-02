@@ -53,6 +53,9 @@ const config: Config = {
           foreground: 'hsl(var(--card-foreground))',
         },
         surface: 'hsl(var(--surface))',
+        'heritage-gold': 'hsl(var(--heritage-gold))',
+        'heritage-bronze': 'hsl(var(--heritage-bronze))',
+        'heritage-sage': 'hsl(var(--heritage-sage))',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -60,9 +63,11 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        serif: ['var(--font-playfair)'],
-        mono: ['var(--font-geist-mono)'],
+        sans: ['var(--font-sans)'],
+        serif: ['var(--font-garamond)'],
+        mono: ['var(--font-mono)'],
+        garamond: ['var(--font-garamond)'],
+        'eb-garamond': ['var(--font-eb-garamond)'],
       },
       keyframes: {
         'accordion-down': {
@@ -114,9 +119,11 @@ const config: Config = {
         '88': '22rem',
       },
       boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.04)',
-        'large': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+        soft: '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+        medium:
+          '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.04)',
+        large:
+          '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
       },
     },
   },
